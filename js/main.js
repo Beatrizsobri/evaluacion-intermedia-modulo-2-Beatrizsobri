@@ -37,7 +37,7 @@ const compare = function () {
 const count = function () {
     numberCount = (numberCount + 1);
     console.log(numberCount);
-    countingText.innerHTML = `numberCount`;
+    countingText.innerHTML = `Número de intestos: ${numberCount}`;
 };
 
 const actionButton = function (event) {
