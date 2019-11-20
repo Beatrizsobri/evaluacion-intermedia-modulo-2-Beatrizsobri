@@ -1,5 +1,5 @@
 const button = document.querySelector('.js-form__submit');
-const numberCount = 0;
+let numberCount = 0;
 const clue = document.querySelector('.js-clue');
 const countingText = document.querySelector('.js-counting-text');
 
@@ -19,9 +19,9 @@ const compare = function () {
     const inputNumberValue = inputValue;
     console.log(inputNumberValue);
 
-    if (inputNumberValue >= 100) {
+    if (inputNumberValue > 100) {
         clue.innerHTML = "El número debe estar entre 1 y 100."
-    } else if (inputNumberValue <= 1) {
+    } else if (inputNumberValue < 1) {
         clue.innerHTML = "El número debe estar entre 1 y 100."
     } else if (inputNumberValue > randomNumber) {
         clue.innerHTML = "Demasiado Alto.";
@@ -35,15 +35,15 @@ const compare = function () {
 
 
 const count = function () {
-    let numberCount = (numberCount + 1);
-    console.log(numberCount)
-}
+    numberCount = (numberCount + 1);
+    console.log(numberCount);
+    countingText.innerHTML = `numberCount`;
+};
 
 const actionButton = function (event) {
     event.preventDefault();
-    // generateRandomNumber();
     compare();
-    // count();
+    count();
 };
 
 button.addEventListener('click', actionButton);
